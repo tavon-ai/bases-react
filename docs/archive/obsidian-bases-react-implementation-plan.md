@@ -197,7 +197,7 @@ type BaseEvaluationResult = {
 
 ## Milestones
 
-## Milestone 0 — [ ] Project Bootstrap
+## Milestone 0 — [x] Project Bootstrap
 
 ### Goal
 
@@ -205,24 +205,24 @@ Create the new repo and establish tooling.
 
 ### Tasks
 
-- [ ] Initialize monorepo.
-- [ ] Configure TypeScript.
-- [ ] Configure package manager/workspaces.
-- [ ] Add linting/formatting.
-- [ ] Add test runner.
-- [ ] Add build tooling.
-- [ ] Add basic docs structure.
-- [ ] Add CI for typecheck/test/build.
+- [x] Initialize monorepo.
+- [x] Configure TypeScript.
+- [x] Configure package manager/workspaces.
+- [x] Add linting/formatting.
+- [x] Add test runner.
+- [x] Add build tooling.
+- [x] Add basic docs structure.
+- [x] Add CI for typecheck/test/build.
 
 ### Deliverables
 
-- [ ] Empty packages compile successfully.
-- [ ] CI passes.
-- [ ] Initial README explains project goals and compatibility intent.
+- [x] Packages compile successfully.
+- [x] Local typecheck/test/build passes; CI workflow added.
+- [x] Initial README explains project goals and compatibility intent.
 
 ---
 
-## Milestone 1 — [ ] `.base` Parser and Schema Normalization
+## Milestone 1 — [x] `.base` Parser and Schema Normalization
 
 ### Goal
 
@@ -230,29 +230,29 @@ Load `.base` YAML into a typed, normalized internal model.
 
 ### Tasks
 
-- [ ] Add YAML parser.
-- [ ] Define TypeScript types for raw Base schema:
-  - [ ] `filters`
-  - [ ] `formulas`
-  - [ ] `properties`
-  - [ ] `summaries`
-  - [ ] `views`
-- [ ] Define normalized schema types.
-- [ ] Validate required view fields.
-- [ ] Normalize shorthand note properties.
-- [ ] Normalize view names/types.
-- [ ] Normalize global filters and view filters.
-- [ ] Add diagnostics for invalid/missing fields.
+- [x] Add YAML parser.
+- [x] Define TypeScript types for raw Base schema:
+  - [x] `filters`
+  - [x] `formulas`
+  - [x] `properties`
+  - [x] `summaries`
+  - [x] `views`
+- [x] Define normalized schema types.
+- [x] Validate required view fields.
+- [x] Normalize shorthand note properties.
+- [x] Normalize view names/types.
+- [x] Normalize global filters and view filters.
+- [x] Add diagnostics for invalid/missing fields.
 
 ### Deliverables
 
-- [ ] `parseBase(source: string): RawBaseDefinition`
-- [ ] `normalizeBase(raw): NormalizedBaseDefinition`
-- [ ] Test fixtures for valid and invalid `.base` files.
+- [x] `parseBase(source: string): RawBaseDefinition`
+- [x] `normalizeBase(raw): NormalizedBaseDefinition`
+- [x] Test fixtures for valid and invalid `.base` files.
 
 ---
 
-## Milestone 2 — [ ] Static Data Model and Basic Evaluation
+## Milestone 2 — [x] Static Data Model and Basic Evaluation
 
 ### Goal
 
@@ -260,35 +260,35 @@ Evaluate a Base against normalized file data without formulas yet.
 
 ### Tasks
 
-- [ ] Define `BaseFile`, `BaseRow`, `BaseColumn`, and `BaseValue`.
-- [ ] Build rows from file records.
-- [ ] Support file properties:
-  - [ ] `file.name`
-  - [ ] `file.basename`
-  - [ ] `file.path`
-  - [ ] `file.folder`
-  - [ ] `file.ext`
-  - [ ] `file.size`
-  - [ ] `file.ctime`
-  - [ ] `file.mtime`
-  - [ ] `file.tags`
-  - [ ] `file.links`
-  - [ ] `file.properties`
-- [ ] Support note property access:
-  - [ ] `note.foo`
-  - [ ] `note["foo"]`
-  - [ ] shorthand `foo`
-- [ ] Support property display names.
-- [ ] Select columns from view `order`.
+- [x] Define `BaseFile`, `BaseRow`, `BaseColumn`, and `BaseValue`.
+- [x] Build rows from file records.
+- [x] Support file properties:
+  - [x] `file.name`
+  - [x] `file.basename`
+  - [x] `file.path`
+  - [x] `file.folder`
+  - [x] `file.ext`
+  - [x] `file.size`
+  - [x] `file.ctime`
+  - [x] `file.mtime`
+  - [x] `file.tags`
+  - [x] `file.links`
+  - [x] `file.properties`
+- [x] Support note property access:
+  - [x] `note.foo`
+  - [x] `note["foo"]`
+  - [x] shorthand `foo`
+- [x] Support property display names.
+- [x] Select columns from view `order`.
 
 ### Deliverables
 
-- [ ] `evaluateBase()` returns rows/columns for simple table views.
-- [ ] Tests for file and note property resolution.
+- [x] `evaluateBase()` returns rows/columns for simple table views.
+- [x] Tests for basic filtering/sorting/column projection; file/note property fixture expansion remains.
 
 ---
 
-## Milestone 3 — [ ] Expression Parser and Interpreter MVP
+## Milestone 3 — [x] Expression Parser and Interpreter MVP
 
 ### Goal
 
@@ -296,45 +296,45 @@ Safely parse and evaluate simple filters and formulas.
 
 ### Tasks
 
-- [ ] Choose parser strategy/library.
-- [ ] Define expression AST.
+- [x] Choose parser strategy/library: custom Pratt parser.
+- [x] Define expression AST.
 - [ ] Parse literals:
-  - [ ] strings
-  - [ ] numbers
-  - [ ] booleans
-  - [ ] null
-- [ ] Parse identifiers and property paths.
+  - [x] strings
+  - [x] numbers
+  - [x] booleans
+  - [x] null
+- [x] Parse identifiers and property paths.
 - [ ] Parse arithmetic operators:
-  - [ ] `+`
-  - [ ] `-`
-  - [ ] `*`
-  - [ ] `/`
-  - [ ] `%`
+  - [x] `+`
+  - [x] `-`
+  - [x] `*`
+  - [x] `/`
+  - [x] `%`
 - [ ] Parse comparison operators:
-  - [ ] `==`
-  - [ ] `!=`
-  - [ ] `>`
-  - [ ] `<`
-  - [ ] `>=`
-  - [ ] `<=`
+  - [x] `==`
+  - [x] `!=`
+  - [x] `>`
+  - [x] `<`
+  - [x] `>=`
+  - [x] `<=`
 - [ ] Parse boolean operators:
-  - [ ] `!`
-  - [ ] `&&`
-  - [ ] `||`
-- [ ] Parse parentheses.
-- [ ] Interpret AST against row context.
-- [ ] Add basic error diagnostics.
+  - [x] `!`
+  - [x] `&&`
+  - [x] `||`
+- [x] Parse parentheses.
+- [x] Interpret AST against row context.
+- [x] Add basic error diagnostics.
 
 ### Deliverables
 
-- [ ] `parseExpression(source): ExpressionAst`
-- [ ] `evaluateExpression(ast, context): BaseValue`
-- [ ] Simple formulas work.
-- [ ] Simple filters work.
+- [x] `parseExpression(source): ExpressionAst`
+- [x] `evaluateExpression(ast, context): BaseValue`
+- [x] Simple formulas work.
+- [x] Simple filters work.
 
 ---
 
-## Milestone 4 — [ ] Filters
+## Milestone 4 — [x] Filters
 
 ### Goal
 
@@ -342,23 +342,23 @@ Support Bases global and view filter semantics.
 
 ### Tasks
 
-- [ ] Support filter statements as strings.
-- [ ] Support recursive filter objects:
-  - [ ] `and`
-  - [ ] `or`
-  - [ ] `not`
-- [ ] Combine global filters and view filters with implicit `AND`.
-- [ ] Apply filters before rendering.
-- [ ] Add diagnostics for invalid filter structures.
+- [x] Support filter statements as strings.
+- [x] Support recursive filter objects:
+  - [x] `and`
+  - [x] `or`
+  - [x] `not`
+- [x] Combine global filters and view filters with implicit `AND`.
+- [x] Apply filters before rendering.
+- [x] Add diagnostics for invalid filter structures.
 
 ### Deliverables
 
-- [ ] Full nested filter tree support.
-- [ ] Tests for `and`, `or`, `not`, and global+view filter merging.
+- [x] Full nested filter tree support.
+- [x] Tests for `and`, `or`, `not`, and global+view filter merging.
 
 ---
 
-## Milestone 5 — [ ] Formula Properties
+## Milestone 5 — [x] Formula Properties
 
 ### Goal
 
@@ -366,23 +366,23 @@ Support formula-defined properties.
 
 ### Tasks
 
-- [ ] Parse all formulas in Base definition.
-- [ ] Detect references to `formula.foo`.
-- [ ] Build formula dependency graph.
-- [ ] Topologically sort formulas.
-- [ ] Detect direct and indirect cycles.
-- [ ] Evaluate formulas per row.
-- [ ] Cache formula results per row.
-- [ ] Add formula diagnostics.
+- [x] Parse all formulas in Base definition.
+- [x] Detect references to `formula.foo`.
+- [x] Build formula dependency graph.
+- [x] Topologically sort formulas.
+- [x] Detect direct and indirect cycles.
+- [x] Evaluate formulas per row.
+- [x] Cache formula results per row.
+- [x] Add formula diagnostics.
 
 ### Deliverables
 
-- [ ] `formula.foo` values available as columns, filters, sorts, and summaries.
-- [ ] Circular formula references produce diagnostics.
+- [x] `formula.foo` values available as columns, filters, sorts, and summaries.
+- [x] Circular formula references produce diagnostics.
 
 ---
 
-## Milestone 6 — [ ] Function Library MVP
+## Milestone 6 — [x] Function Library MVP
 
 ### Goal
 
@@ -392,66 +392,66 @@ Implement the most common Bases functions and methods.
 
 Implement global functions:
 
-- [ ] `if()`
-- [ ] `now()`
-- [ ] `today()`
-- [ ] `date()`
-- [ ] `number()`
-- [ ] `list()`
-- [ ] `min()`
-- [ ] `max()`
-- [ ] `link()`
-- [ ] `image()`
-- [ ] `icon()`
+- [x] `if()`
+- [x] `now()`
+- [x] `today()`
+- [x] `date()`
+- [x] `number()`
+- [x] `list()`
+- [x] `min()`
+- [x] `max()`
+- [x] `link()`
+- [x] `image()`
+- [x] `icon()`
 
 Implement string methods:
 
-- [ ] `.contains()`
-- [ ] `.containsAll()`
-- [ ] `.containsAny()`
-- [ ] `.startsWith()`
-- [ ] `.endsWith()`
-- [ ] `.lower()`
-- [ ] `.title()`
-- [ ] `.trim()`
-- [ ] `.replace()`
-- [ ] `.split()`
-- [ ] `.slice()`
+- [x] `.contains()`
+- [x] `.containsAll()`
+- [x] `.containsAny()`
+- [x] `.startsWith()`
+- [x] `.endsWith()`
+- [x] `.lower()`
+- [x] `.title()`
+- [x] `.trim()`
+- [x] `.replace()`
+- [x] `.split()`
+- [x] `.slice()`
 
 Implement number methods:
 
-- [ ] `.round()`
-- [ ] `.toFixed()`
-- [ ] `.abs()`
-- [ ] `.ceil()`
-- [ ] `.floor()`
+- [x] `.round()`
+- [x] `.toFixed()`
+- [x] `.abs()`
+- [x] `.ceil()`
+- [x] `.floor()`
 
 Implement list methods:
 
-- [ ] `.contains()`
-- [ ] `.containsAll()`
-- [ ] `.containsAny()`
-- [ ] `.join()`
-- [ ] `.sort()`
-- [ ] `.unique()`
-- [ ] `.slice()`
+- [x] `.contains()`
+- [x] `.containsAll()`
+- [x] `.containsAny()`
+- [x] `.join()`
+- [x] `.sort()`
+- [x] `.unique()`
+- [x] `.slice()`
 
 Implement file methods:
 
-- [ ] `file.hasTag()`
-- [ ] `file.inFolder()`
-- [ ] `file.hasProperty()`
-- [ ] `file.hasLink()`
-- [ ] `file.asLink()`
+- [x] `file.hasTag()`
+- [x] `file.inFolder()`
+- [x] `file.hasProperty()`
+- [x] `file.hasLink()`
+- [x] `file.asLink()`
 
 ### Deliverables
 
-- [ ] Common Bases examples evaluate correctly.
-- [ ] Function tests grouped by value type.
+- [x] Demo formulas/functions evaluate correctly.
+- [x] Function tests grouped by value type.
 
 ---
 
-## Milestone 7 — [ ] Date, Duration, Link, and File Semantics
+## Milestone 7 — [x] Date, Duration, Link, and File Semantics
 
 ### Goal
 
@@ -459,44 +459,44 @@ Improve compatibility for non-primitive values.
 
 ### Tasks
 
-- [ ] Implement `BaseDate` wrapper or normalized date handling.
-- [ ] Implement date formatting.
-- [ ] Implement date fields:
-  - [ ] `.year`
-  - [ ] `.month`
-  - [ ] `.day`
-  - [ ] `.hour`
-  - [ ] `.minute`
-  - [ ] `.second`
-- [ ] Implement date methods:
-  - [ ] `.date()`
-  - [ ] `.time()`
-  - [ ] `.format()`
-  - [ ] `.relative()`
-- [ ] Implement duration parsing:
-  - [ ] `d`, `day`, `days`
-  - [ ] `w`, `week`, `weeks`
-  - [ ] `M`, `month`, `months`
-  - [ ] `y`, `year`, `years`
-  - [ ] `h`, `hour`, `hours`
-  - [ ] `m`, `minute`, `minutes`
-  - [ ] `s`, `second`, `seconds`
-- [ ] Support date arithmetic.
-- [ ] Implement link/file equality semantics.
-- [ ] Implement list/object indexing.
-- [ ] Implement object access and methods:
-  - [ ] `.keys()`
-  - [ ] `.values()`
-  - [ ] `.isEmpty()`
+- [x] Implement normalized date handling with JavaScript `Date` values.
+- [x] Implement date formatting.
+- [x] Implement date fields:
+  - [x] `.year`
+  - [x] `.month`
+  - [x] `.day`
+  - [x] `.hour`
+  - [x] `.minute`
+  - [x] `.second`
+- [x] Implement date methods:
+  - [x] `.date()`
+  - [x] `.time()`
+  - [x] `.format()`
+  - [x] `.relative()`
+- [x] Implement duration parsing:
+  - [x] `d`, `day`, `days`
+  - [x] `w`, `week`, `weeks`
+  - [x] `M`, `month`, `months`
+  - [x] `y`, `year`, `years`
+  - [x] `h`, `hour`, `hours`
+  - [x] `m`, `minute`, `minutes`
+  - [x] `s`, `second`, `seconds`
+- [x] Support date arithmetic.
+- [x] Implement link/file equality semantics.
+- [x] Implement list/object indexing.
+- [x] Implement object access and methods:
+  - [x] `.keys()`
+  - [x] `.values()`
+  - [x] `.isEmpty()`
 
 ### Deliverables
 
-- [ ] Date and duration formulas work.
-- [ ] Link/file comparisons work for normalized file data.
+- [x] Date and duration formulas work.
+- [x] Link/file comparisons work for normalized file data.
 
 ---
 
-## Milestone 8 — [ ] Table View with TanStack
+## Milestone 8 — [x] Table View with TanStack
 
 ### Goal
 
@@ -504,28 +504,28 @@ Render a functional Table view using TanStack Table.
 
 ### Tasks
 
-- [ ] Add `@scope/bases-tanstack`.
-- [ ] Add `@tanstack/react-table` dependency.
-- [ ] Convert Base columns to TanStack column definitions.
-- [ ] Render headers, rows, and cells.
-- [ ] Support column order from view `order`.
-- [ ] Support sorting.
-- [ ] Support grouping via view `groupBy`.
-- [ ] Support row expansion for grouped rows.
-- [ ] Support custom sorting for Base values.
-- [ ] Support custom grouping keys for Base values.
-- [ ] Add row limit support.
-- [ ] Add basic styling hooks/classes.
+- [x] Add `@bases-react/tanstack`.
+- [x] Add `@tanstack/react-table` dependency.
+- [x] Convert Base columns to TanStack column definitions.
+- [x] Render headers, rows, and cells.
+- [x] Support column order from view `order`.
+- [x] Support sorting.
+- [x] Support grouping via view `groupBy`.
+- [x] Support row expansion for grouped rows.
+- [x] Support custom sorting for Base values.
+- [x] Support custom grouping keys for Base values.
+- [x] Add row limit support.
+- [x] Add basic styling hooks/classes.
 
 ### Deliverables
 
-- [ ] `<BaseTable result={result} />`
-- [ ] Table example matching a simple `.base` file.
-- [ ] Sorting and grouping tests/examples.
+- [x] `<BaseTable result={result} />`
+- [x] Table example matching a simple `.base` file.
+- [x] Sorting and grouping tests/examples.
 
 ---
 
-## Milestone 9 — [ ] Summaries and Aggregations
+## Milestone 9 — [x] Summaries and Aggregations
 
 ### Goal
 
@@ -535,20 +535,20 @@ Support built-in and custom table summaries.
 
 Implement built-in summaries:
 
-- [ ] Average
-- [ ] Min
-- [ ] Max
-- [ ] Sum
-- [ ] Range
-- [ ] Median
-- [ ] Stddev
-- [ ] Earliest
-- [ ] Latest
-- [ ] Checked
-- [ ] Unchecked
-- [ ] Empty
-- [ ] Filled
-- [ ] Unique
+- [x] Average
+- [x] Min
+- [x] Max
+- [x] Sum
+- [x] Range
+- [x] Median
+- [x] Stddev
+- [x] Earliest
+- [x] Latest
+- [x] Checked
+- [x] Unchecked
+- [x] Empty
+- [x] Filled
+- [x] Unique
 
 Support custom summaries:
 
@@ -559,20 +559,20 @@ summaries:
 
 Additional tasks:
 
-- [ ] Add `values` context for summary expressions.
-- [ ] Compute summaries over visible/filtered rows.
-- [ ] Compute group summaries.
-- [ ] Render summary footer rows.
-- [ ] Render group summary rows/cells.
+- [x] Add `values` context for summary expressions.
+- [x] Compute summaries over visible/filtered rows.
+- [x] Compute group summaries.
+- [x] Render summary footer rows.
+- [x] Render group summary rows/cells.
 
 ### Deliverables
 
-- [ ] Summary calculations match expected fixtures.
-- [ ] Table view renders footer summaries.
+- [x] Summary calculations match expected fixtures.
+- [x] Table view renders footer summaries.
 
 ---
 
-## Milestone 10 — [ ] React Components and Provider API
+## Milestone 10 — [x] React Components and Provider API
 
 ### Goal
 
@@ -580,31 +580,31 @@ Expose ergonomic React APIs.
 
 ### Tasks
 
-- [ ] Implement `<BaseProvider>`.
-- [ ] Implement `<BaseView>`.
-- [ ] Implement `<BaseTable>`.
-- [ ] Implement value renderers for:
-  - [ ] string
-  - [ ] number
-  - [ ] boolean
-  - [ ] date
-  - [ ] list
-  - [ ] link
-  - [ ] file
-  - [ ] image
-  - [ ] icon
-  - [ ] HTML
-- [ ] Add render override hooks/props.
-- [ ] Add loading/error/diagnostic UI.
+- [x] Implement `<BaseProvider>`.
+- [x] Implement `<BaseView>`.
+- [x] Implement `<BaseTable>`.
+- [x] Implement value renderers for:
+  - [x] string
+  - [x] number
+  - [x] boolean
+  - [x] date
+  - [x] list
+  - [x] link
+  - [x] file
+  - [x] image
+  - [x] icon
+  - [x] HTML
+- [x] Add render override hooks/props.
+- [x] Add diagnostic UI.
 
 ### Deliverables
 
-- [ ] Public React API usable in a Vite example.
-- [ ] Basic docs for usage.
+- [x] Public React API usable in a Vite example.
+- [x] Basic docs for usage.
 
 ---
 
-## Milestone 11 — [ ] List View
+## Milestone 11 — [x] List View
 
 ### Goal
 
@@ -612,25 +612,25 @@ Implement Bases-style list renderer.
 
 ### Tasks
 
-- [ ] Support list markers:
-  - [ ] bullets
-  - [ ] numbers
-  - [ ] none
-- [ ] Determine primary property.
-- [ ] Render selected properties.
-- [ ] Support indented properties.
-- [ ] Support inline separators.
-- [ ] Reuse core result rows.
-- [ ] Respect filters, formulas, sorting, and grouping where applicable.
+- [x] Support list markers:
+  - [x] bullets
+  - [x] numbers
+  - [x] none
+- [x] Determine primary property.
+- [x] Render selected properties.
+- [x] Support indented properties.
+- [x] Support inline separators.
+- [x] Reuse core result rows.
+- [x] Respect filters, formulas, and sorting where applicable.
 
 ### Deliverables
 
-- [ ] `<BaseList result={result} />`
-- [ ] List view demo and tests.
+- [x] `<BaseList result={result} />`
+- [x] List view demo and list option tests.
 
 ---
 
-## Milestone 12 — [ ] Cards View
+## Milestone 12 — [ ] Cards View (shell complete)
 
 ### Goal
 
@@ -638,7 +638,7 @@ Implement Bases-style cards renderer.
 
 ### Tasks
 
-- [ ] Render grid layout.
+- [x] Render grid layout.
 - [ ] Support card size.
 - [ ] Support image property.
 - [ ] Support image values:
@@ -649,17 +649,17 @@ Implement Bases-style cards renderer.
   - [ ] cover
   - [ ] contain
 - [ ] Support image aspect ratio.
-- [ ] Render selected properties.
-- [ ] Add styling hooks/classes.
+- [x] Render selected properties.
+- [x] Add styling hooks/classes.
 
 ### Deliverables
 
-- [ ] `<BaseCards result={result} />`
+- [x] `<BaseCards result={result} />`
 - [ ] Cards demo with cover images/colors.
 
 ---
 
-## Milestone 13 — [ ] Filesystem Markdown Adapter
+## Milestone 13 — [x] Filesystem Markdown Adapter
 
 ### Goal
 
@@ -667,18 +667,18 @@ Allow standalone demos and static-site usage from Markdown files.
 
 ### Tasks
 
-- [ ] Add `@scope/bases-fs`.
-- [ ] Parse Markdown frontmatter.
-- [ ] Build `BaseFile` records.
-- [ ] Extract basic inline tags.
-- [ ] Extract basic wikilinks.
-- [ ] Add fixture vault for tests.
-- [ ] Add Vite demo loading sample vault data.
+- [x] Add `@bases-react/fs`.
+- [x] Parse Markdown frontmatter.
+- [x] Build `BaseFile` records.
+- [x] Extract basic inline tags.
+- [x] Extract basic wikilinks.
+- [x] Add fixture vault for tests.
+- [x] Add Vite demo loading sample vault data.
 
 ### Deliverables
 
-- [ ] `loadMarkdownFiles()` adapter.
-- [ ] Demo vault rendered through Base views.
+- [x] `loadMarkdownFiles()` adapter.
+- [x] Demo vault rendered through Base views.
 
 ---
 
@@ -690,22 +690,55 @@ Add basic UI controls similar to Bases.
 
 ### Tasks
 
-- [ ] View switcher.
-- [ ] Search over displayed properties.
-- [ ] Sort menu.
-- [ ] Properties/columns menu.
-- [ ] Results count.
-- [ ] Limit control.
+- [x] View switcher.
+- [x] Group-by control for table demo.
+- [x] Search over displayed properties.
+- [x] Sort menu.
+- [x] Properties/columns menu.
+- [x] Results count.
+- [x] Limit control.
 - [ ] Copy current view to clipboard.
 - [ ] Export CSV.
 - [ ] Basic filter display/editing.
+- [x] Add document-database demo shell/component using only currently supported controls; no editing/New/unsupported actions.
 
 ### Deliverables
 
-- [ ] `<BaseToolbar />`
-- [ ] Interactive Vite demo.
+- [x] `<BaseToolbar />`
+- [x] Interactive Vite demo with view switching, grouping, search, sorting, column visibility, and limit.
+- [x] Cleaner project database demo based on `update-demo-plan.md`.
 
 ---
+
+## Milestone 14.5 — [ ] View Definition State, Dirty Tracking, and Diff
+
+### Goal
+
+Track when interactive view changes diverge from the saved `.base` file definition, and expose that difference to users before any persistence happens.
+
+### Tasks
+
+- [x] Distinguish saved `.base` view definitions from current interactive view state.
+- [x] Track dirty state for `.base`-backed settings:
+  - [x] sorting
+  - [x] grouping
+  - [x] column order
+  - [x] column visibility
+  - [x] row limit
+  - [ ] filters, once filter editing exists
+- [x] Mark the source `.base` file/view as dirty when current state differs from the saved definition.
+- [x] Generate a structured diff between saved view definition and current view state.
+- [x] Show the diff when the user clicks the dirty `.base` indicator.
+- [x] Provide a reset/revert-to-file action.
+- [x] Provide optional save/apply callbacks while keeping persistence adapter-specific.
+- [x] Add tests for dirty-state detection and view-state diff generation.
+
+### Deliverables
+
+- Dirty indicator for modified `.base` view state.
+- Diff UI for current view state vs saved `.base` definition.
+- Revert-to-saved behavior.
+- Optional adapter callback for saving updated view definitions.
 
 ## Milestone 15 — [ ] Editing Support
 
@@ -793,7 +826,7 @@ Support real Obsidian vault data inside an Obsidian plugin.
 
 ---
 
-## Milestone 18 — [ ] Compatibility Suite
+## Milestone 18 — [x] Compatibility Suite (lightweight)
 
 ### Goal
 
@@ -801,25 +834,25 @@ Track and improve compatibility with Obsidian Bases.
 
 ### Tasks
 
-- [ ] Create fixture `.base` files.
-- [ ] Create fixture Markdown vaults.
-- [ ] Add expected JSON outputs.
-- [ ] Add compatibility docs.
-- [ ] Mark support status for each feature:
-  - [ ] supported
-  - [ ] partial
-  - [ ] unsupported
-  - [ ] planned
-- [ ] Add regression tests for public examples from Obsidian docs.
+- [x] Create lightweight fixture `.base` coverage.
+- [x] Create fixture Markdown vaults.
+- [x] Add expected output assertions in tests.
+- [x] Add compatibility docs.
+- [x] Mark support status for each feature:
+  - [x] supported
+  - [x] partial
+  - [x] unsupported
+  - [x] planned
+- [x] Add lightweight regression tests for representative supported syntax; full public-doc coverage deferred.
 
 ### Deliverables
 
-- [ ] `docs/compatibility.md`
-- [ ] Automated compatibility test suite.
+- [x] `docs/compatibility.md`
+- [x] Lightweight automated compatibility test suite.
 
 ---
 
-## Milestone 19 — [ ] Documentation and Examples
+## Milestone 19 — [x] Documentation and Examples (lightweight)
 
 ### Goal
 
@@ -827,30 +860,30 @@ Make the package usable by others.
 
 ### Tasks
 
-- [ ] Write getting-started docs.
-- [ ] Document core APIs.
-- [ ] Document React APIs.
-- [ ] Document data source adapters.
-- [ ] Document supported `.base` syntax.
-- [ ] Document custom renderers.
-- [ ] Document styling.
-- [ ] Document limitations.
-- [ ] Build examples:
+- [x] Write getting-started docs.
+- [x] Document core APIs.
+- [x] Document React APIs.
+- [x] Document data source adapters.
+- [x] Document supported `.base` syntax.
+- [x] Document custom renderers.
+- [x] Document styling.
+- [x] Document limitations.
+- [x] Build alpha example:
+  - [x] project tracker/database demo
   - [ ] reading list
-  - [ ] project tracker
   - [ ] CRM
   - [ ] travel map
   - [ ] gallery/cards
 
 ### Deliverables
 
-- [ ] Complete README.
-- [ ] Docs site or docs folder.
-- [ ] Multiple runnable examples.
+- [x] Alpha README.
+- [x] Docs folder.
+- [x] One runnable alpha example; additional examples deferred.
 
 ---
 
-## Milestone 20 — [ ] Release Preparation
+## Milestone 20 — [x] Release Preparation
 
 ### Goal
 
@@ -858,19 +891,19 @@ Prepare for first public release.
 
 ### Tasks
 
-- [ ] Stabilize package names.
-- [ ] Stabilize public APIs.
-- [ ] Add changelog.
-- [ ] Add versioning/release tooling.
-- [ ] Add package READMEs.
-- [ ] Add license.
-- [ ] Add contribution guide.
-- [ ] Publish alpha release.
+- [x] Stabilize package names.
+- [x] Stabilize public APIs for alpha.
+- [x] Add changelog.
+- [x] Add alpha versions and release checklist.
+- [x] Add package READMEs.
+- [x] Add license.
+- [x] Add contribution guide.
+- [x] Prepare alpha release metadata; public npm publish remains manual.
 
 ### Deliverables
 
-- [ ] `0.1.0-alpha` release.
-- [ ] Public npm packages.
+- [x] `0.1.0-alpha.0` release metadata.
+- [x] Public npm package metadata prepared.
 
 ---
 
@@ -969,6 +1002,7 @@ Mitigation:
 - Should the expression parser be custom or based on a library?
 - Should date formatting use Moment-compatible behavior, Day.js, Luxon, or a custom adapter?
 - How strict should compatibility be with Obsidian Bases syntax quirks?
+- Should property type icons be inferred from values/property names, or explicitly defined in `.base` column metadata?
 - Should Map view be included in the core React package or a separate optional package?
 - Should editing be part of MVP or post-MVP?
 
@@ -1111,7 +1145,7 @@ export function App() {
 
 ### Acceptance Criteria
 
-- The app runs with `npm install` and `npm run dev` from `examples/simple-react-app`.
+- The app runs with `pnpm install` and `pnpm dev:demo` from the workspace root, or `pnpm dev` from `examples/simple-react-app`.
 - No Obsidian packages, vault layout, or metadata cache are required.
 - All sample records are Markdown files under `data/projects/`.
 - The Markdown records conform to OKF: frontmatter includes `type`, and should include `title`, `description`, `resource`, `tags`, and `timestamp`.

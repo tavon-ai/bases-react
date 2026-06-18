@@ -1,0 +1,36 @@
+{
+  "name": "bases-react-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "build": "pnpm -r --if-present run build",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "dev:demo": "pnpm -r --filter './packages/**' --if-present run build && pnpm --filter simple-react-app dev --force",
+    "build:demo": "pnpm -r --filter './packages/**' --if-present run build && pnpm --filter simple-react-app build",
+    "deploy:demo": "pnpm run build:demo && gh-pages -d examples/simple-react-app/dist"
+  },
+  "devDependencies": {
+    "@bases-react/core": "workspace:0.1.0-alpha.0",
+    "@bases-react/fs": "workspace:0.1.0-alpha.0",
+    "@bases-react/react": "workspace:0.1.0-alpha.0",
+    "@bases-react/tanstack": "workspace:0.1.0-alpha.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^20.14.10",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^10.5.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.8.4",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.61.1",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.4"
+  },
+  "version": "0.1.0-alpha.0",
+  "license": "MIT"
+}

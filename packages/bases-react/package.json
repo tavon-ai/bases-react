@@ -1,0 +1,38 @@
+{
+  "name": "@bases-react/react",
+  "version": "0.1.0-alpha.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./src/styles.css"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json --emitDeclarationOnly false",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@bases-react/core": "workspace:*",
+    "@bases-react/tanstack": "workspace:*",
+    "@tanstack/react-table": "^8.20.1",
+    "lucide-react": "^0.468.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0"
+  },
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src/styles.css",
+    "README.md"
+  ]
+}

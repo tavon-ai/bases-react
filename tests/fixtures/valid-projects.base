@@ -1,0 +1,20 @@
+properties:
+  title:
+    label: Project
+formulas:
+  health: 'if(progress >= 70, "Healthy", "At Risk")'
+views:
+  - name: Table
+    type: table
+    filters:
+      and:
+        - property: type
+          equals: Project
+    columns:
+      - property: title
+      - property: formula.health
+        label: Health
+      - property: progress
+    sort:
+      - property: progress
+        direction: desc

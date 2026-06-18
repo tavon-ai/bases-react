@@ -1,0 +1,6 @@
+properties:
+  title:
+    label: Title
+filters:
+  property: type
+  equals: Project

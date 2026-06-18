@@ -1,0 +1,69 @@
+summaries:
+  averageProgress:
+    property: progress
+    type: average
+  uniqueOwners:
+    property: owner
+    type: unique
+formulas:
+  health: 'if(progress >= 70, "Healthy", if(progress >= 45, "Watch", "At Risk"))'
+  ownerLabel: 'owner + " · " + status'
+  isFrontend: 'tags.contains("frontend")'
+  updatedYear: 'date(timestamp).year'
+  reviewDate: 'date(timestamp) + duration("14 days")'
+  updateAge: '(date(timestamp) - date("2026-06-01T00:00:00Z")).humanize()'
+views:
+  - name: Table
+    type: table
+    filters:
+      property: status
+      equals: Active
+    columns:
+      - property: title
+        label: Project
+      - property: status
+      - property: owner
+      - property: priority
+      - property: progress
+        label: Progress %
+      - property: formula.health
+        label: Health
+      - property: formula.isFrontend
+        label: Frontend?
+      - property: tags
+    groupBy: status
+    sort:
+      - property: progress
+        direction: desc
+  - name: List
+    type: list
+    filters: 'status == "Active"'
+    columns:
+      - property: title
+        label: Project
+      - property: formula.ownerLabel
+        label: Owner / Status
+      - property: formula.health
+      - property: formula.reviewDate
+        label: Review Date
+      - property: progress
+        label: Progress %
+    sort:
+      - property: progress
+        direction: desc
+  - name: Cards
+    type: cards
+    columns:
+      - property: title
+        label: Project
+      - property: description
+      - property: owner
+      - property: status
+      - property: formula.health
+      - property: formula.reviewDate
+        label: Review Date
+      - property: progress
+        label: Progress %
+    sort:
+      - property: title
+        direction: asc
