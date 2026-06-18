@@ -52,6 +52,14 @@ body {
   margin: 0;
 }
 
+.hero-links {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+}
+
 .base-file-link {
   align-items: center;
   background: transparent;
@@ -65,6 +73,7 @@ body {
   font-weight: 650;
   gap: 0.42rem;
   padding: 0.45rem 0.6rem;
+  text-decoration: none;
 }
 
 .base-file-link:hover {

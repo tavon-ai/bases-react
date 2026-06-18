@@ -4,6 +4,10 @@ A standalone React package suite for rendering Obsidian Bases-style views from `
 
 The alpha focuses on standalone React usage: parse `.base` files, normalize definitions, load Markdown frontmatter, evaluate rows/columns/filters/formulas/summaries, and render table/list/cards views in a Vite demo.
 
+## Live demo
+
+**Try the interactive demo:** <https://tavon-ai.github.io/bases-react/>
+
 ![Bases React demo showing a Projects table view with filters, grouping, sorting, summaries, and tags](docs/assets/bases-react-demo.png)
 
 ## Packages

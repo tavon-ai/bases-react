@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FileCode2, X } from 'lucide-react'
+import { FileCode2, Github, X } from 'lucide-react'
 import { BaseView } from '@bases-react/react'
 import { loadMarkdownFiles, parseBaseFile } from '@bases-react/fs'
 import baseYaml from '../data/projects.base?raw'
@@ -23,10 +23,30 @@ export function App() {
         <p className="eyebrow">Standalone OKF project database</p>
         <div className="hero-title-row">
           <h1>Projects</h1>
-          <button className="base-file-link" type="button" onClick={() => setBaseOpen(true)}>
-            <FileCode2 aria-hidden="true" />
-            Open projects.base
-          </button>
+          <div className="hero-links">
+            <a
+              className="base-file-link"
+              href="https://github.com/tavon-ai/bases-react"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Github aria-hidden="true" />
+              Project home
+            </a>
+            <a
+              className="base-file-link"
+              href="https://github.com/tavon-ai/bases-react/tree/main/examples/simple-react-app/data"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <FileCode2 aria-hidden="true" />
+              Data source
+            </a>
+            <button className="base-file-link" type="button" onClick={() => setBaseOpen(true)}>
+              <FileCode2 aria-hidden="true" />
+              Open projects.base
+            </button>
+          </div>
         </div>
         <p>
           Review project concepts from local Markdown files. Switch views, search, filter, group,
