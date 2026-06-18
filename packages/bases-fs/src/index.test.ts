@@ -27,6 +27,35 @@ describe('@bases-react/fs fixture vault', () => {
     expect(file.links).toEqual(['Beta'])
   })
 
+  it('does not throw on duplicate frontmatter keys', () => {
+    const file = parseMarkdownFile(
+      'people/contact.md',
+      [
+        '---',
+        'tags:',
+        '  - original',
+        'tags:',
+        '  - duplicate',
+        'status: active',
+        '---',
+        '#inline',
+      ].join('\n'),
+    )
+
+    expect(file.properties).toMatchObject({ tags: ['duplicate'], status: 'active' })
+    expect(file.tags).toEqual(['duplicate', 'inline'])
+  })
+
+  it('does not throw on malformed frontmatter', () => {
+    const file = parseMarkdownFile(
+      'people/broken.md',
+      ['---', 'tags: [broken', '---', 'Body with #fallback'].join('\n'),
+    )
+
+    expect(file.properties).toEqual({})
+    expect(file.tags).toEqual(['fallback'])
+  })
+
   it('loads a small vault through import-like modules', () => {
     const files = loadMarkdownFiles({
       '../vault/projects/alpha.md': readFileSync(join(fixtureRoot, 'alpha.md'), 'utf8'),

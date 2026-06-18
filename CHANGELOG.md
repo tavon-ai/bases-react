@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0-alpha.1
+
+- Fix Markdown frontmatter parsing in `@bases-react/fs` so duplicate YAML keys and malformed frontmatter do not crash consumers.
+
 ## 0.1.0-alpha.0
 
 Initial alpha preparation for the standalone Obsidian Bases React package suite.

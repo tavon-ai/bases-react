@@ -12,7 +12,7 @@ importers:
         specifier: workspace:0.1.0-alpha.0
         version: link:packages/bases-core
       '@bases-react/fs':
-        specifier: workspace:0.1.0-alpha.0
+        specifier: workspace:0.1.0-alpha.1
         version: link:packages/bases-fs
       '@bases-react/react':
         specifier: workspace:0.1.0-alpha.0

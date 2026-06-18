@@ -38,8 +38,12 @@ function parseFrontmatter(source: string): {
 } {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/)
   if (!match) return { frontmatter: {}, body: source }
-  const parsed = yaml.load(match[1])
-  return { frontmatter: normalizeYamlRecord(parsed), body: match[2] ?? '' }
+  try {
+    const parsed = yaml.load(match[1], { json: true })
+    return { frontmatter: normalizeYamlRecord(parsed), body: match[2] ?? '' }
+  } catch {
+    return { frontmatter: {}, body: match[2] ?? '' }
+  }
 }
 
 function normalizeYamlRecord(value: unknown): Record<string, BaseValue> {
